@@ -20,6 +20,10 @@ Backend:
 - Backend API (production): [https://backend-lake-delta-78.vercel.app](https://backend-lake-delta-78.vercel.app)
 - Backend API Docs (Swagger): [https://backend-lake-delta-78.vercel.app/docs](https://backend-lake-delta-78.vercel.app/docs)
 
+## Video Walkthrough
+
+- 2-minute walkthrough link: **To be updated**
+
 ## Rubric Coverage (A-G)
 
 | Part | Requirement | Status | Primary Evidence |
