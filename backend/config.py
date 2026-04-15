@@ -23,7 +23,18 @@ EMBEDDINGS_PATH = STORE_DIR / "chunk_embeddings.npy"
 TFIDF_MATRIX_PATH = STORE_DIR / "tfidf_matrix.npz"
 TFIDF_VECTORIZER_PATH = STORE_DIR / "tfidf_vectorizer.pkl"
 MANIFEST_PATH = STORE_DIR / "manifest.json"
-FEEDBACK_LOG_PATH = STORE_DIR / "feedback.jsonl"
+
+
+def _feedback_log_path() -> Path:
+    override = os.getenv("RAG_FEEDBACK_LOG_PATH")
+    if override:
+        return Path(override)
+    if os.getenv("VERCEL"):
+        return Path("/tmp/feedback.jsonl")
+    return STORE_DIR / "feedback.jsonl"
+
+
+FEEDBACK_LOG_PATH = _feedback_log_path()
 
 DEFAULT_CSV_FILE = "Ghana_Election_Result.csv"
 DEFAULT_PDF_FILE = "2025-Budget-Statement-and-Economic-Policy_v4.pdf"
