@@ -7,6 +7,7 @@ import { Database } from "lucide-react";
 
 export default function AssistantHome() {
   const [lastResponse, setLastResponse] = useState<RAGResponse | null>(null);
+  const [lastQuery, setLastQuery] = useState("");
 
   return (
     <div className="flex flex-col h-screen">
@@ -29,10 +30,15 @@ export default function AssistantHome() {
 
       <main className="flex-1 min-h-0 flex flex-col lg:flex-row">
         <div className="flex-1 min-h-[50vh] lg:min-h-0 lg:border-r">
-          <ChatPanel onResponse={setLastResponse} />
+          <ChatPanel
+            onResponse={(response, query) => {
+              setLastResponse(response);
+              setLastQuery(query);
+            }}
+          />
         </div>
         <div className="flex-1 min-h-[50vh] lg:min-h-0 lg:w-[440px] lg:flex-none">
-          <RetrievalPanel data={lastResponse} />
+          <RetrievalPanel data={lastResponse} query={lastQuery} />
         </div>
       </main>
     </div>

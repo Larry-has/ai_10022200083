@@ -6,7 +6,7 @@ import type { ChatMessage, RAGResponse } from "@/lib/types";
 import { sendChatMessage } from "@/lib/api";
 
 interface ChatPanelProps {
-  onResponse: (response: RAGResponse) => void;
+  onResponse: (response: RAGResponse, query: string) => void;
 }
 
 export default function ChatPanel({ onResponse }: ChatPanelProps) {
@@ -43,7 +43,7 @@ export default function ChatPanel({ onResponse }: ChatPanelProps) {
         timestamp: new Date().toISOString(),
       };
       setMessages((prev) => [...prev, assistantMsg]);
-      onResponse(data);
+      onResponse(data, query);
     } catch {
       const errorMsg: ChatMessage = {
         id: crypto.randomUUID(),

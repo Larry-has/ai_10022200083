@@ -69,3 +69,28 @@ export async function fetchLogs(): Promise<PipelineLog[]> {
 
   return request<PipelineLog[]>("/logs");
 }
+
+interface ChunkFeedbackPayload {
+  query: string;
+  chunk_ids: string[];
+  helpful: boolean;
+  notes?: string;
+}
+
+interface ChunkFeedbackResponse {
+  status: string;
+  recorded: number;
+}
+
+export async function submitChunkFeedback(
+  payload: ChunkFeedbackPayload
+): Promise<ChunkFeedbackResponse> {
+  if (USE_MOCK) {
+    return { status: "ok", recorded: payload.chunk_ids.length };
+  }
+
+  return request<ChunkFeedbackResponse>("/feedback", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}

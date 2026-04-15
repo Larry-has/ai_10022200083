@@ -2,9 +2,12 @@ import type { RAGResponse } from "@/lib/types";
 import ChunkCard from "./ChunkCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { FileText, List, Code } from "lucide-react";
+import { useState } from "react";
+import { submitChunkFeedback } from "@/lib/api";
 
 interface RetrievalPanelProps {
   data: RAGResponse | null;
+  query: string;
 }
 
 function SectionLabel({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) {
@@ -18,7 +21,10 @@ function SectionLabel({ icon: Icon, children }: { icon: React.ElementType; child
   );
 }
 
-export default function RetrievalPanel({ data }: RetrievalPanelProps) {
+export default function RetrievalPanel({ data, query }: RetrievalPanelProps) {
+  const [feedbackByChunk, setFeedbackByChunk] = useState<Record<string, "up" | "down" | null>>({});
+  const [pendingChunkId, setPendingChunkId] = useState<string | null>(null);
+
   if (!data) {
     return (
       <div className="flex flex-col h-full bg-card items-center justify-center">
@@ -28,6 +34,29 @@ export default function RetrievalPanel({ data }: RetrievalPanelProps) {
       </div>
     );
   }
+
+  const handleChunkFeedback = async (
+    chunkId: string,
+    helpful: boolean
+  ) => {
+    if (!query) return;
+    try {
+      setPendingChunkId(chunkId);
+      await submitChunkFeedback({
+        query,
+        chunk_ids: [chunkId],
+        helpful,
+      });
+      setFeedbackByChunk((prev) => ({
+        ...prev,
+        [chunkId]: helpful ? "up" : "down",
+      }));
+    } catch {
+      // Feedback failure should not block browsing inspector data
+    } finally {
+      setPendingChunkId(null);
+    }
+  };
 
   return (
     <div className="flex flex-col h-full bg-card">
@@ -46,7 +75,15 @@ export default function RetrievalPanel({ data }: RetrievalPanelProps) {
             </SectionLabel>
             <div className="space-y-2">
               {data.chunks.map((chunk) => (
-                <ChunkCard key={chunk.id} chunk={chunk} />
+                <ChunkCard
+                  key={chunk.id}
+                  chunk={chunk}
+                  onFeedback={(selectedChunk, helpful) =>
+                    handleChunkFeedback(selectedChunk.id, helpful)
+                  }
+                  feedbackState={feedbackByChunk[chunk.id] ?? null}
+                  disabled={pendingChunkId === chunk.id || !query}
+                />
               ))}
             </div>
           </section>
