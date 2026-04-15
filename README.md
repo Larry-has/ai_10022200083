@@ -20,6 +20,11 @@ Backend:
 - Backend API (production): [https://backend-lake-delta-78.vercel.app](https://backend-lake-delta-78.vercel.app)
 - Backend API Docs (Swagger): [https://backend-lake-delta-78.vercel.app/docs](https://backend-lake-delta-78.vercel.app/docs)
 
+## Backend API Quick Links
+
+- Swagger Docs: [https://backend-lake-delta-78.vercel.app/docs](https://backend-lake-delta-78.vercel.app/docs)
+- OpenAPI JSON: [https://backend-lake-delta-78.vercel.app/openapi.json](https://backend-lake-delta-78.vercel.app/openapi.json)
+
 ## Video Walkthrough
 
 - 2-minute walkthrough link: **To be updated**
