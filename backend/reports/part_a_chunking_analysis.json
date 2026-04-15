@@ -1,0 +1,89 @@
+{
+  "benchmark_queries": [
+    {
+      "query": "What vote share did John Dramani Mahama get in Ahafo region?",
+      "expected_source": "Ghana_Election_Result.csv",
+      "expected_terms": [
+        "mahama",
+        "vote share",
+        "ahafo"
+      ]
+    },
+    {
+      "query": "What does the 2025 budget say about government expenditure?",
+      "expected_source": "2025-Budget-Statement-and-Economic-Policy_v4.pdf",
+      "expected_terms": [
+        "budget",
+        "expenditure"
+      ]
+    },
+    {
+      "query": "Which party did Nana Akufo-Addo represent and how many votes were recorded?",
+      "expected_source": "Ghana_Election_Result.csv",
+      "expected_terms": [
+        "akufo",
+        "party",
+        "votes"
+      ]
+    },
+    {
+      "query": "Summarize key fiscal policy priorities in the 2025 budget statement.",
+      "expected_source": "2025-Budget-Statement-and-Economic-Policy_v4.pdf",
+      "expected_terms": [
+        "fiscal",
+        "policy",
+        "budget"
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "chunk_size": 400,
+      "chunk_overlap": 60,
+      "chunk_count": 2733,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_5": 1.0,
+      "keyword_coverage_at_5": 1.0,
+      "mrr_source": 1.0,
+      "avg_top1_dense_similarity": 0.6433,
+      "avg_retrieved_chars_at_5": 1402.75,
+      "context_budget_exceed_rate": 0.0
+    },
+    {
+      "chunk_size": 800,
+      "chunk_overlap": 120,
+      "chunk_count": 1708,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_5": 1.0,
+      "keyword_coverage_at_5": 1.0,
+      "mrr_source": 1.0,
+      "avg_top1_dense_similarity": 0.6398,
+      "avg_retrieved_chars_at_5": 1971.75,
+      "context_budget_exceed_rate": 0.25
+    },
+    {
+      "chunk_size": 1200,
+      "chunk_overlap": 180,
+      "chunk_count": 1380,
+      "source_hit_at_1": 1.0,
+      "source_hit_at_5": 1.0,
+      "keyword_coverage_at_5": 1.0,
+      "mrr_source": 1.0,
+      "avg_top1_dense_similarity": 0.639,
+      "avg_retrieved_chars_at_5": 2439.0,
+      "context_budget_exceed_rate": 0.5
+    }
+  ],
+  "recommended_config": {
+    "chunk_size": 400,
+    "chunk_overlap": 60,
+    "chunk_count": 2733,
+    "source_hit_at_1": 1.0,
+    "source_hit_at_5": 1.0,
+    "keyword_coverage_at_5": 1.0,
+    "mrr_source": 1.0,
+    "avg_top1_dense_similarity": 0.6433,
+    "avg_retrieved_chars_at_5": 1402.75,
+    "context_budget_exceed_rate": 0.0
+  }
+}

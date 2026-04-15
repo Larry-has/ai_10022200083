@@ -1,0 +1,10 @@
+node_modules
+.next
+.venv-backend
+.pytest_cache
+backend
+.env
+.env.*
+logs
+*.log
+

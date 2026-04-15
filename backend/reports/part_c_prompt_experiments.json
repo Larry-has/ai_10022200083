@@ -1,0 +1,37 @@
+{
+  "query": "What does the 2025 budget statement say about expenditure priorities?",
+  "context_chunk_count": 4,
+  "results": [
+    {
+      "prompt_mode": "baseline_v1",
+      "answer": "The 2025 budget statement prioritizes containing public expenditure and bringing public finances back on a sustainable path by improving the quality and efficiency in public spending and rationalizing expenses.",
+      "metrics": {
+        "citation_mentions": 0,
+        "unsupported_number_count": 0,
+        "abstained": false,
+        "groundedness_score": 0.0
+      }
+    },
+    {
+      "prompt_mode": "grounded_v2",
+      "answer": "The 2025 budget statement prioritizes containing public expenditure and bringing public finances back on a sustainable path by improving the quality and efficiency in public spending and rationalizing expenses. This information is supported by the following source:\n\nSource=2025-Budget-Statement-and-Economic-Policy_v4.pdf",
+      "metrics": {
+        "citation_mentions": 1,
+        "unsupported_number_count": 0,
+        "abstained": false,
+        "groundedness_score": 0.4
+      }
+    },
+    {
+      "prompt_mode": "skeptical_v3",
+      "answer": "Insufficient evidence in provided documents.",
+      "metrics": {
+        "citation_mentions": 0,
+        "unsupported_number_count": 0,
+        "abstained": true,
+        "groundedness_score": 0.2
+      }
+    }
+  ],
+  "best_prompt_mode": "grounded_v2"
+}

@@ -1,0 +1,13 @@
+{
+  "query": "budget expenditure priorities",
+  "before_ranking": [
+    "c1",
+    "c2"
+  ],
+  "after_ranking": [
+    "c2",
+    "c1"
+  ],
+  "feedback_recorded_for": "c2",
+  "explanation": "The feedback-aware reranking adds a bounded query-similarity-weighted score to previously helpful chunks."
+}

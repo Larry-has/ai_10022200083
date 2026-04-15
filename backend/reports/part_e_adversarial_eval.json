@@ -1,0 +1,50 @@
+{
+  "queries": [
+    "What were the final certified results of the 2028 Ghana presidential election by region?",
+    "How much in Ghana cedis was allocated to a national quantum-computing scholarship in the 2025 budget?"
+  ],
+  "results": [
+    {
+      "query": "What were the final certified results of the 2028 Ghana presidential election by region?",
+      "rag": {
+        "answer_1": "The provided contexts do not contain any information about the 2028 Ghana presidential election results by region. The documents appear to be related to budget statements and economic policies, not election results. Therefore, the answer is not supported by the retrieved documents.",
+        "answer_2": "The provided contexts do not contain any information about the 2028 Ghana presidential election results by region. The documents appear to be related to budget statements and economic policies, not election results. Therefore, the answer is not supported by the retrieved documents.",
+        "consistency": 1.0,
+        "abstained": true,
+        "source_mentions": 0,
+        "unsupported_number_count": 1,
+        "hallucination_risk": "low"
+      },
+      "pure_llm": {
+        "answer_1": "As of my last update, the 2028 Ghana presidential election results have not been certified yet. Ghana's elections typically take place every four years, and the most recent election was in 2024. For the most accurate and up-to-date information on the 2028 election results, you should check the latest reports from Ghana's Electoral Commission or reliable news sources.",
+        "answer_2": "As of my last update, the 2028 Ghana presidential election results have not been certified yet. Ghana typically holds its presidential elections every four years, and the most recent election was in 2024. For the most accurate and up-to-date information on the 2028 election results, you should check the latest reports from Ghana's Electoral Commission or reliable news sources.",
+        "consistency": 0.8984,
+        "abstained": false,
+        "source_mentions": 0,
+        "unsupported_number_count": 2,
+        "hallucination_risk": "high"
+      }
+    },
+    {
+      "query": "How much in Ghana cedis was allocated to a national quantum-computing scholarship in the 2025 budget?",
+      "rag": {
+        "answer_1": "The answer is not supported by the retrieved documents. The contexts provided do not mention any allocation for a national quantum-computing scholarship in the 2025 budget.",
+        "answer_2": "The answer is not supported by the retrieved documents. The contexts provided do not mention any allocation for a national quantum-computing scholarship in the 2025 budget.",
+        "consistency": 1.0,
+        "abstained": true,
+        "source_mentions": 0,
+        "unsupported_number_count": 0,
+        "hallucination_risk": "low"
+      },
+      "pure_llm": {
+        "answer_1": "I do not have specific information about the exact allocation in Ghana cedis for a national quantum-computing scholarship in the 2025 budget. Budget allocations for specific programs can vary and are not always publicly detailed or widely reported. For accurate and up-to-date information, you would need to refer to the official budget documents or press releases from the Ghanaian government for the 2025 fiscal year.",
+        "answer_2": "I do not have specific information about the exact allocation in Ghana cedis for a national quantum-computing scholarship in the 2025 budget. Budget allocations for specific programs can vary and are not always publicly detailed. For accurate and up-to-date information, you would need to refer to the official budget documents or press releases from the Ghanaian government for the 2025 fiscal year.",
+        "consistency": 0.9768,
+        "abstained": false,
+        "source_mentions": 0,
+        "unsupported_number_count": 0,
+        "hallucination_risk": "medium"
+      }
+    }
+  ]
+}
