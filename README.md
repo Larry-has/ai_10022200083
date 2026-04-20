@@ -27,7 +27,7 @@ Backend:
 
 ## Video Walkthrough
 
-- 2-minute walkthrough link: **To be updated**
+- 2-minute walkthrough link: [https://drive.google.com/file/d/1hD5W8R4zxR0vF8WOutj-C8E6U1sv5v11/view?usp=sharing](https://drive.google.com/file/d/1hD5W8R4zxR0vF8WOutj-C8E6U1sv5v11/view?usp=sharing)
 
 ## Rubric Coverage (A-G)
 
